@@ -7,6 +7,36 @@
   <meta name="author" content="David Selch">
   <meta name="description" content="Exam submission for The Socially Aware Web: a literature review and reflection on loyal user agents and structurally disloyal browsers.">
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  article {
+    max-width: 70ch;      
+    margin: 0 auto;       
+  }
+
+  h1, h2, h3 {
+    line-height: 1.2;
+  }
+
+  details summary {
+    cursor: pointer;     
+  }
+
+  @media (min-width: 900px) {
+    main {
+      padding: 2rem 3rem; 
+    }
+  }
+</style>
 </head>
 <body>
   <main>
@@ -16,7 +46,8 @@
     <p>
       <strong>Author:</strong> David Selch<br>
       <strong>Mat. Number:</strong> 18-618-629<br>
-      <strong>Course:</strong> The Socially Aware Web (HSG)<br>
+      <strong>Course:</strong> The Socially Aware Web<br>
+      <strong>School:</strong> University of St. Gallen<br>
       <strong>Exam:</strong> Literature Review &amp; Reflection<br>
       <strong>Date:</strong> <time datetime="2025-11-30">November 30, 2025</time>
     </p>
@@ -76,9 +107,11 @@
           <h3>Normative Foundations</h3>
           <p>
             Web standards set a normative baseline for what browsers should be: loyal, privacy-preserving, open, decentralized, and protective of human rights. The W3C Privacy Principles and Ethical Web Principles describe a web in which user agents prioritize the user’s interests, minimize data collection, and reduce harmful capability through protective defaults, autonomy protection, and resistance to cross-context tracking. They also support open processes, decentralized governance, a multi-browser, multi-engine ecosystem, and meaningful user control over modification, extension, and data agency (W3C, 2024, 2025). This vision assumes that no single vendor, engine, or platform should become a single point of dependence or exclusion.
-
+ </p>
+  <p>
 The W3C Web User Agents Note supports this role by stressing that user agents serve their users, not other parties, and that their duties should be embodied in the standards they implement. It describes duties of protection, honesty, and loyalty. Visiting a page should be safe by default, explanations of behavior must be understandable and timely, and user agents must not obstruct switching or access to user data such as identity, bookmarks, and credentials (Yasskin & Capadisli, 2025; W3C, 2025). Human rights guidance extends these duties. RFC 9620 emphasizes that intermediaries, including browsers, directly shape agency, expression, privacy, and censorship resistance. They treat confidentiality, integrity, and decentralization as essential design obligations (Grover & ten Oever, 2024). RFC 8890 reinforces that in all conflicts of interest, end-user welfare must dominate (Nottingham, 2020).
-
+ </p>
+  <p>
 Finally, OpenStand’s governance model calls for openness, balance, and multi-stakeholder participation to prevent capture and sustain an interoperable Web (Housley et al., 2013). Together, these norms specify a clear “should”: browsers must function as loyal, honest, user-protective agents within an open, decentralized ecosystem.
 
           </p>
@@ -95,7 +128,8 @@ Finally, OpenStand’s governance model calls for openness, balance, and multi-s
           <h3>Governance &amp; Political Economy</h3>
           <p>
             Browser misalignment is not just a technical accident but a predictable outcome of concentrated market power and shared incentives. With Chrome holding roughly 73% of global share and Safari another 13%, the Web is mediated through two vertically integrated ecosystems, leaving other engines too marginal to provide real governance pressure (StatCounter, n.d.). In such asymmetric environments, vendor incentives compete with and often outweigh standards as the decisive architectural force. Standards bodies such as W3C and IETF are built around open, multi-stakeholder processes, consensus building, and transparent governance, reflecting OpenStand’s principles of balance and voluntary adoption (Housley et al., 2013). Working groups and community groups, including those on WebExtensions, are meant to specify shared models, permissions, and core APIs in public processes rather than leaving key decisions to a single vendor. Yet in practice, browser governance is heavily shaped by vendors with the resources to “show up” consistently, ship running code, and control major engines, and by editor-driven, implementation-first cultures that amplify their influence.
-
+ </p>
+  <p>
 Economic dynamics reinforce this drift. Experiments with reinforcement-learning agents show that they can create supra-competitive equilibria resembling collusion (Calvano et al., 2021). By analogy, dominant browser vendors facing similar structural incentives can restrict capability, delay privacy protections, or enforce ecosystem lock-in because the reward structure makes these outcomes optimal. Infrastructural control is itself governance: like DNS operators or routing providers, browsers use technical defaults, chokepoints, and protocol decisions as de facto policy shaping global information flows, access, and rights (DeNardis & Musiani, 2016). Against this, both OpenStand and RFC 8890 articulate governance ideals – openness, balance, multi-stakeholder participation, and end-user primacy – that reject unilateral vendor rulemaking (Housley et al., 2013; Nottingham, 2020). Their contrast with contemporary browser realities reveals the core tension: incentive-driven infrastructural governance overwhelms normative standards, producing structural browser disloyalty rather than isolated misbehavior.
 
           </p>
@@ -108,9 +142,11 @@ Economic dynamics reinforce this drift. Experiments with reinforcement-learning 
             <h4>Manifest V3: Extensibility and Structural Disloyalty</h4>
             <p>
               MV3 shows how architectural constraints, coupled with asymmetric governance power, translate into structural browser disloyalty. It dismantles the blocking webRequest API, which enables adaptive ad-blocking and privacy tooling, and replaces it with declarativeNetRequest, a rule-based filtering model capped by static and dynamic limits that cannot express complex blocking logic. Despite being framed as a privacy improvement, MV3 leaves full observational access to request data intact, so the cited vulnerabilities are neither clearly explained nor fixed (Ghostery, n.d.).
-
+ </p>
+  <p>
 Although MV3 originated within Chromium’s extension model, it is now also a part of cross-vendor WebExtensions standardization efforts at W3C, where work on a common extension model, permissions model, and core APIs aims to support interoperable extensions across browsers (Smith, 2025). Chrome’s market dominance means that MV3’s design constraints effectively set the baseline that other browsers feel compelled to follow. This turns unilateral API changes into de facto cross-browser norms that override multi-stakeholder review and pressure competitors toward compatibility (Devaney & Sullivan, 2025).
-
+ </p>
+  <p>
 MV3 thus functions as infrastructural governance: an API change that effectively regulates which privacy tools can exist, narrowing user agency and reshaping the extension ecosystem (DeNardis & Musiani, 2016). Google presents MV3 as part of a security and performance update, emphasising service-worker migration, CSP tightening, and banning remotely hosted code (Google, n.d.). Yet these benefits coexist with clear incentive misalignment: restricting powerful blockers fits Chrome’s ad-funded business model and directly weakens user-first privacy protections expected of a loyal user agent (Ghostery, n.d.).
 
             </p>
@@ -120,9 +156,11 @@ MV3 thus functions as infrastructural governance: an API change that effectively
             <h4>Apple’s WebKit Mandate: Engine Monoculture and Platform Control</h4>
             <p>
               Apple’s iOS WebKit mandate shows how architectural control at the engine layer becomes a governance mechanism that limits user agency and suppresses browser competition. By requiring all iOS browsers to use WebKit, Apple removes engine choice entirely, and ties performance and feature availability to a single vendor’s implementation. This creates platform-level gatekeeping: rivals cannot ship independent innovations or differentiate on capability, leaving Apple to decide how far the iOS Web can go. Regulators find that this restriction inflates development costs, reduces feature diversity, and harms the viability of Web Apps and PWAs (Open Web Advocacy, 2025).
-
+ </p>
+  <p>
 Even after mandatory DMA adjustments, alternative engines remain effectively impractical: they must operate as standalone apps, lack testing infrastructure, and require duplicate maintenance work, establishing WebKit as the de facto engine. These frictions produce standards misalignment, as modern capabilities arrive late or incompletely on iOS. This hinders interoperability and undermines the multi-browser ecosystem foundational to the open web (Weatherbed, 2025).
-
+ </p>
+  <p>
 Apple’s mandate runs against W3C expectations for openness, decentralization, and support for multiple interoperable engines. It centralizes governance and reduces user choice, contradicting the assumption that no actor should control the web’s execution environment (W3C, 2024). From the perspective of the Web User Agents Note, this undermines key expectations for user agents: users cannot meaningfully choose among independent engines, and browser behavior is constrained to a single vendor’s implementation, weakening both user control and the resilience of a multi-engine ecosystem.
 
             </p>
@@ -153,9 +191,11 @@ Apple’s mandate runs against W3C expectations for openness, decentralization, 
           <h3>Reflecting on Manifest V3: Loyalty, Protection, and Invisible Constraints</h3>
           <p>
             MV3 changes what counts as “protection” in ways that do not sit well with the user-agent duties described. It is framed as a privacy and security improvement, yet it weakens blocking extensions while leaving the browser’s own access to request data intact. That contrast raises a basic question about the duty of protection: whose interests are being protected when powerful user-controlled tools are constrained, but the data flows remain visible to the vendor?
-
+ </p>
+  <p>
 From a user’s perspective, this trade-off is largely invisible. Decisions about how to balance security, performance, advertising revenue, and extension capability are made inside the vendor’s ecosystem. Externally, their effects appear as softened blockers, rigid rule caps, or extensions that gradually lose effectiveness. This opacity highlights the duty of honesty: if an architectural change reduces the kinds of protections users can deploy on their own behalf, a loyal user agent would need to make those consequences far more explicit than a generic promise of better security.
-
+ </p>
+  <p>
 MV3 also exposes a gap between formal processes and practical power. Cross-vendor work on WebExtensions points to a collaborative effort toward interoperable extension models, yet a dominant implementation can still define the baseline that others want to follow. Standardization and vendor-led changes coexist, but not on equal footing. This raises a question for the user-agent model: if one vendor’s design choices determine what extensibility means for most users, then user loyalty seems to require more than a standards process. It requires meaningful limits on how far such changes can go without clear justification and accountability.
 
           </p>
@@ -165,9 +205,11 @@ MV3 also exposes a gap between formal processes and practical power. Cross-vendo
           <h3>Reflecting on Apple’s WebKit Mandate: Choice, Control, and Engine Monoculture</h3>
           <p>
             The WebKit mandate challenges the idea that seeing different browser icons on a device means having real choice. On iOS, Safari, Chrome, and Firefox suggest different user agents, but they all rely on the same underlying engine. From a user’s perspective, the interface and branding may differ, yet performance, available APIs, and many privacy-relevant behaviors remain tied to WebKit. Compared to Web Architecture’s ideal of a multi-engine, interoperable Web, what looks like a choice of browsers is really just one engine.
-
+ </p>
+  <p>
 This has direct implications for the duties described in the Web User Agents Note. An agent that should not obstruct switching and should support meaningful control over how it acts on behalf of the user is, in practice, constrained by a platform rule. That rule prevents any fundamentally different agent from existing. If all iOS browsers must share the same engine, switching between them cannot address deeper concerns about capability, loyalty, or protection; it only changes surface-level features while one actor decides what is possible on the platform. Experiences I might previously have blamed on a bad site or a weak web app now look different: when they feel second-class, or features lag behind other platforms, this often reflects engine-level gatekeeping rather than developer shortcomings.
-
+ </p>
+  <p>
 The regulatory responses discussed in the case, such as DMA-driven adjustments, do little to resolve that tension. Even when alternative engines are formally permitted, practical barriers such as distribution constraints, lack of integration, and missing tooling can keep WebKit in control. From a user-agent-duty perspective, this gap between what is formally possible and the reality of being locked into one engine raises a critical question: what does it mean to speak of switchable user agents and a multi-engine ecosystem when, for an entire class of devices, the only real choice is between different skins on the same underlying agent?
 
           </p>
@@ -177,9 +219,11 @@ The regulatory responses discussed in the case, such as DMA-driven adjustments, 
           <h3>Reading the Two Cases Together: Infrastructural Governance and Structural Disloyalty</h3>
           <p>
             Taken together, MV3 and the WebKit mandate make the structural nature of browser disloyalty hard to ignore. They act on different layers, extension APIs in one case, rendering engines in the other, but both work as technical levers and governance tools, narrowing what extensions can do and which engines can exist. What looks like an implementation detail becomes policy embedded in infrastructure, reducing the space of tools and experiences available to users.
-
+ </p>
+  <p>
 These cases support the thesis of structural disloyalty. Strong incentives combined with concentrated market power produce systematic patterns: MV3 aligns with an ad-funded business model by constraining powerful blockers, while WebKit’s position protects platform control by limiting competing engines. For users, this shows as weakened extensions, missing capabilities, and puzzling differences between platforms. It is the visible edge of incentive-compatible governance, where browser behavior is optimized for vendor interests even when standards describe a user-first agent.
-
+ </p>
+  <p>
 The unresolved question is how far such frameworks can realistically shift MV3’s and WebKit`s structure: if a few actors continue to control the main levers over user experience, loyalty remains more ideal than constraint. Moving toward more loyal user agents will require not just better standards but also limits on treating core web infrastructure as a private governance space.
 
           </p>
@@ -189,9 +233,11 @@ The unresolved question is how far such frameworks can realistically shift MV3�
           <h3>Looking Forward: What I Now Expect from User Agents and Standards</h3>
           <p>
             For a user agent to count as loyal in the sense described by the Web User Agents Note and related guidance and standards, some minimum expectations emerge. Architecture changes that affect user protections, like MV3’s limits on blocking or engine mandates on iOS, should be explained clearly, with their consequences for user control made explicit rather than hidden behind generic claims for security. Portability of data and configurations across agents needs to be real, not just theoretical, so that switching browsers does not mean losing identity, history, or core functionality. Default settings should lean toward data minimization and protection, instead of forcing users to work around vendor incentives through manual configuration.
-
+ </p>
+  <p>
 Good browser governance, in this light, would maintain multi-engine resilience as a structural feature rather than an accident. It would ensure that transparent standardization constrains implementations in practice, and clearly separate genuine safety measures from restrictions driven by business models, with vendors responsible for showing how changes align with user-agent duties. This also reshapes how I think about user agency itself. Agency is not only about which sites I visit or which settings I toggle; it is also about whether I can really choose and switch between user agents with different governance profiles. If publications like the Web User Agents Note, HRPC, and the Ethical Web Principles are to matter, they need to be tied to mechanisms that check implementation. Whether it is through testing, regulation, or public scrutiny, they need to surface in user-facing interfaces and controls, not buried in specifications.
-
+ </p>
+  <p>
 At the same time, there are limits to how much can realistically be expected from individual users. Switching browsers, understanding engine differences, or evaluating architectural changes all demand time and knowledge that many people do not have. The path toward a better-aligned browser ecosystem is therefore likely to depend on a mix of stronger standards, more assertive governance (including regulation where necessary), and gradual cultural change among implementers. User choices will matter, but as one factor rather than the primary lever for change.
 
           </p>
@@ -301,8 +347,8 @@ At the same time, there are limits to how much can realistically be expected fro
         </p>
         <p>
           URL:
-          <a href="*URL*">
-            *URL*
+          <a href="https://dselch.github.io/paper_socially_aware_web/">
+            https://dselch.github.io/paper_socially_aware_web/
           </a>
         </p>
       </footer>
